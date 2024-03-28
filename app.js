@@ -24,6 +24,7 @@ app.get('/bye2', (req, res) => {
 });
 
 
+//feature branch fonksiyonları
 app.get('/f1', (req, res) => {
     res.send('new feature in this app');
 });
