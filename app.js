@@ -31,10 +31,10 @@ app.get('/f1', (req, res) => {
 });
 
 
-app.get('/f2', (req, res) => {
-    res.send('new feature2 here'); //this function changed
-});
 // new line added from (feature branch)
+
+
+//f2 endpoint deleted
 
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
