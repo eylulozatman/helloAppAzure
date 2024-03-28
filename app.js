@@ -17,6 +17,11 @@ app.get('/bye', (req, res) => {
     res.send('goodbye');
 });
 
+
+app.get('/f1', (req, res) => {
+    res.send('new feature in this app');
+});
+
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
 });
