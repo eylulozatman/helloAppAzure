@@ -17,6 +17,10 @@ app.get('/bye', (req, res) => {
     res.send('goodbye');
 });
 
+app.get('/bye2', (req, res) => {
+    res.send('goodbye2');
+});
+
 
 app.get('/f1', (req, res) => {
     res.send('new feature in this app');
