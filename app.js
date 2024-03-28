@@ -13,9 +13,11 @@ app.get('/hello', (req, res) => {
     res.send('hellooo');
 });
 
+//bye branchi ile merge edilerek gelmiş fonksiyonlar
 app.get('/bye', (req, res) => {
     res.send('goodbye');
 });
+
 
 app.get('/bye2', (req, res) => {
     res.send('goodbye2');
