@@ -5,8 +5,8 @@ const express = require('express');
 const app = express();
 const port = 3000; 
 
-app.get('/func1', (req, res) => {
-    res.send('my initial function');
+app.get('/', (req, res) => {
+    res.send('my initial function, Hello');
 });
 
 app.get('/hello', (req, res) => {
