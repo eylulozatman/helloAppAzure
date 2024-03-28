@@ -5,7 +5,6 @@ const express = require('express');
 const app = express();
 const port = 3000; 
 
-//practice
 app.get('/func1', (req, res) => {
     res.send('my initial function');
 });
