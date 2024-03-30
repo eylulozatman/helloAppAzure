@@ -32,7 +32,7 @@ app.get('/f1', (req, res) => {
     res.send('new feature in this app');
 });
 
-async function connectToPostgres() {
+/*async function connectToPostgres() {
     try {
         // Key Vault'tan gizli bilgileri al
         const url = await config.getSecret("url");
@@ -61,6 +61,7 @@ async function connectToPostgres() {
 
 // Test etmek için PostgreSQL bağlantısını gerçekleştir
 connectToPostgres();
+*/
 
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
