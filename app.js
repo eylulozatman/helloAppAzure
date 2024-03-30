@@ -1,12 +1,10 @@
-
+require('dotenv').config();
 const express = require('express');
 const config = require('./config');
 const { Pool } = require('pg');
 
-
 const app = express();
-const port = 3000; 
-const PORT = process.env.PORT || 3000;
+const port = 3000;
 
 //DEPLOYMENT
 
@@ -23,7 +21,6 @@ app.get('/bye', (req, res) => {
     res.send('goodbye');
 });
 
-
 app.get('/bye2', (req, res) => {
     res.send('goodbyeeee');
 });
@@ -34,12 +31,6 @@ app.get('/bye2', (req, res) => {
 app.get('/f1', (req, res) => {
     res.send('new feature in this app');
 });
-
-
-// new line added from (feature branch)
-
-
-//f2 endpoint deleted
 
 async function connectToPostgres() {
     try {
@@ -70,7 +61,6 @@ async function connectToPostgres() {
 
 // Test etmek için PostgreSQL bağlantısını gerçekleştir
 connectToPostgres();
-
 
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
