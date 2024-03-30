@@ -36,6 +36,38 @@ app.get('/f1', (req, res) => {
 
 //f2 endpoint deleted
 
+const config = require('./config');
+const { Pool } = require('pg');
+
+async function connectToPostgres() {
+    try {
+        const username = await config.getSecret("postgres-username-secret-name");
+        const password = await config.getSecret("postgres-password-secret-name");
+        const url = await config.getSecret("postgres-url-secret-name");
+
+        const connectionString = `postgres://${username}:${password}@${url}`;
+
+        const pool = new Pool({
+            connectionString: connectionString
+        });
+
+        pool.query('SELECT NOW()', (err, res) => {
+            if (err) {
+                console.error('Error connecting to PostgreSQL:', err);
+            } else {
+                console.log('Connected to PostgreSQL:', res.rows[0].now);
+            }
+            pool.end();
+        });
+    } catch (error) {
+        console.error('Error retrieving PostgreSQL credentials from Key Vault:', error);
+    }
+}
+
+// Test etmek için uygulamayı çalıştır
+connectToPostgres();
+
+
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
 });
