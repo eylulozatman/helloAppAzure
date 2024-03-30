@@ -1,7 +1,7 @@
 const { SecretClient } = require("@azure/keyvault-secrets");
 const { DefaultAzureCredential } = require("@azure/identity");
 
-const vaultUrl = "https://your-key-vault.vault.azure.net/";
+const vaultUrl = "https://kv-4453.vault.azure.net/";
 
 const credential = new DefaultAzureCredential();
 const client = new SecretClient(vaultUrl, credential);
