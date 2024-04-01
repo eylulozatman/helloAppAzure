@@ -1,4 +1,4 @@
-/*require('dotenv').config();
+require('dotenv').config();
 
 const { SecretClient } = require("@azure/keyvault-secrets");
 const { DefaultAzureCredential } = require("@azure/identity");
@@ -16,4 +16,3 @@ async function getSecret(name) {
 module.exports = {
     getSecret
 };
-*/
